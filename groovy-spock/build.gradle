@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.json:json:20140107'
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+    testImplementation 'org.apache.groovy:groovy-all:4.0.10'
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+    testImplementation 'commons-io:commons-io:2.4'
+    testImplementation("com.athaydes:spock-reports:2.5.0-groovy-4.0") {
+        transitive = false
+    }
+    testImplementation 'org.slf4j:slf4j-api:1.7.30'
+//    testRuntimeClasspath 'org.slf4j:slf4j-simple:1.7.30'
+}
+
+test {
+    useJUnitPlatform()
+}
